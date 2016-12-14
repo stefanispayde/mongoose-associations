@@ -165,7 +165,7 @@ Here's how we'd take our models for a spin and make two objects to test out crea
 
 ```js
 /* make a new Ingredient document */
-var cheddar = new Ingredient ({
+var cheddar = new db.Ingredient ({
  title: 'cheddar cheese',
  origin: 'Wisconson'
 });
@@ -173,7 +173,7 @@ var cheddar = new Ingredient ({
 
 ```js
 /* make a new Food document */
-var cheesyQuiche = new Food ({
+var cheesyQuiche = new db.Food ({
   name: 'Quiche',
   ingredients: []
 });
@@ -241,14 +241,14 @@ Mongoose is happy to show just the `ObjectId` associated with each ingredient in
 When we want to get full information from an `Ingredient` document we have inside the `Food` document `ingredients` array, we use a method called `.populate()`.
 
 ```js
-Food.findOne({ name: 'Quiche' })
+db.Food.findOne({ name: 'Quiche' })
   .populate('ingredients')    // <- pull in ingredient data
   .exec(function(err, food) {
     if (err){
-      return console.log(err);
+      console.log(err);
     }
     if (food.ingredients.length > 0) {
-      console.log('/nI love ' + food.name + ' for the '+ food.ingredients[0].name);
+      console.log('/nI love ' + food.name + ' for the '+ food.ingredients[0].title);
     }
     else {
       console.log(food.name + ' has no ingredients.');
