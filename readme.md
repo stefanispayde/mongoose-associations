@@ -65,7 +65,7 @@ Each student "has many" classes they attend, and each class "has many" students.
 ![many to many erd example](https://cloud.githubusercontent.com/assets/3254910/18140903/4c56c3ee-6f6c-11e6-9b6d-4c6ffae81323.png)
 
 
-####Entity Relationship Diagrams
+#### Entity Relationship Diagrams
 
 Entity relationship diagrams (ERDs) represent information about the numerical relationships between data, or entities.
 
@@ -76,11 +76,11 @@ Note: In the example above, all of the Item1, Item2, Item3 under each heading ar
 
 [More guidelines for ERDs](http://docs.oracle.com/cd/A87860_01/doc/java.817/a81358/05_dev1.htm)
 
-####Check for Understanding
+#### Check for Understanding
 
-Come up with an example of related data.  Draw the ERD for your relationship, including a few attributes for each model. 
+Come up with an example of related data.  Draw the ERD for your relationship, including a few attributes for each model.
 
-###Association Categories for Mongoose
+### Association Categories for Mongoose
 
 **Embedded Data** is directly nested *inside* of other data. Each record has a copy of the data.
 
@@ -96,7 +96,8 @@ It is often *efficient* to embed data because you don't have to make a separate 
 
 It is usually easier to keep referenced records *consistent* because the data is only stored in one place and only needs to be updated in one place.  
 
-<img src="http://docs.mongodb.org/manual/_images/data-model-normalized.png" width="60%">
+![image](https://cloud.githubusercontent.com/assets/6520345/21190300/2c091f08-c1d6-11e6-89ed-0459874edf3a.png)
+[Source: MongoDB docs](https://docs.mongodb.com/v3.2/tutorial/model-referenced-one-to-many-relationships-between-documents/)
 
 
 While the question of one-to-one, one-to-many, or  many-to-many is often determined by real-world characteristics of a relationship, the decision to embed or reference data is a design decision.  
@@ -144,10 +145,10 @@ var foodSchema = new Schema({
 
 Check out the value associated with the `ingredients` key inside the food schema. Here's how it's set up as an array of referenced ingredients:
 
-- `[]` lets the food schema know that each food's `ingredients` will be an array
+- `[]` lets the food schema know that each food's `ingredients` attribute will hold an array.
 - The object inside the `[]` describes what kind of elements the array will hold.
-- Giving `type: Schema.Types.ObjectId` tells the schema the `ingredients` array will hold ObjectIds. That's the type of that big beautiful `_id` that Mongo automatically generates for us (something like `55e4ce4ae83df339ba2478c6`).
-- Giving `ref: Ingredient` tells the schema we will only be putting `Ingredient` instance ObjectIds inside the `ingredients` array.
+- Giving `type: Schema.Types.ObjectId` tells the schema the `ingredients` array will hold ObjectIds. That's the type of that unique `_id` that Mongo automatically generates for us (something like `55e4ce4ae83df339ba2478c6`).
+- `ref: Ingredient` tells the schema we will only be putting ObjectIds of  `Ingredient` documents inside the `ingredients` array.
 
 
 #### 2) Manipulate Data with Models
@@ -160,7 +161,7 @@ var Food = mongoose.model('Food', foodSchema);
 var Ingredient = mongoose.model('Ingredient', ingredientSchema);
 ```
 
-Here's how we'd take our models for a spin and make two objects to test out creating a Ingredient document and Food document.
+Here's how we'd take our models for a spin and make two objects to test out creating an Ingredient document and a Food document.
 
 ```js
 /* make a new Ingredient document */
@@ -459,4 +460,3 @@ Remember RESTful routing? It's the most popular modern convention for designing 
 | DELETE | /stores/:store_id/items/:item_id | Delete an item from a store | <details><summary>click for ideas</summary>`.findOne`, `.remove`</details> |
 
 *In routes, avoid nesting resources more than one level deep.*
-
