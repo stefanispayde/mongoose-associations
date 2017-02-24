@@ -88,7 +88,7 @@ Come up with an example of related data.  Draw the ERD for your relationship, in
 It is often *efficient* to embed data because you don't have to make a separate request or a separate database query -- the first request or query gets you all the information you need.  
 
 
-<img src="https://docs.mongodb.com/manual/_images/data-model-denormalized.bakedsvg.svg" width="60%">
+<img src="http://i.imgur.com/aMG36rT.png" width="60%">
 
 
 **Referenced Data** is stored as an *id* inside other data. The id can be used to look up the information. All records that reference the same data look up the same copy.
