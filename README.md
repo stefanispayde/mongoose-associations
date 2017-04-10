@@ -37,7 +37,7 @@ Location: SF
 
 ### Numerical Categories for Relationships
 
-###One-to-One
+### One-to-One
 
 Each person has one brain, and each (living human) brain belongs to one person.
 
@@ -50,14 +50,14 @@ One-to-one relationships can sometimes just be modeled with simple attributes. A
 
 
 
-###One-to-Many
+### One-to-Many
 
 Each leaf "belongs to" the one tree it grew from, and each tree "has many" leaves.
 
 ![one to many erd example](https://cloud.githubusercontent.com/assets/3254910/18182445/e4bddb6c-7044-11e6-9099-314b773724f3.png)
 
 
-###Many-to-Many
+### Many-to-Many
 
 Each student "has many" classes they attend, and each class "has many" students.
 
@@ -295,7 +295,7 @@ db.Food.findOne({ name: 'Quiche' })
 
 Now, instead of seeing **only** the `ObjectId` that pointed us to the `Ingredient` document, we can see the **entire** `Ingredient` document.
 
-####Independent Practice: Foods & Ingredients
+#### Independent Practice: Foods & Ingredients
 
 Get it:
 * fork and clone this repo
@@ -344,7 +344,7 @@ app.get('/api/foods/', function (req, res) {
 On which of the following routes are you most likely to `populate` all the ingredients of a food you look up?
 
 
-|| | |
+| | | |
 |---|---|---|
 | **HTTP Verb** | **Path** | **Description** |
 | GET | /foods | Get all foods |
@@ -442,11 +442,12 @@ app.put('/api/users/:userId/tweets/:id', function (req, res) {
 });
 ```
 
-###Route Design
+### Route Design
 
 Remember RESTful routing? It's the most popular modern convention for designing resource paths for nested data. Here is an example of an application that has routes for `Store` and `Item` models:
 
-###RESTful Routing
+### RESTful Routing
+
 | | | | |
 |---|---|---|---|
 | **HTTP Verb** | **Path** | **Description** | **Key Mongoose Method(s)** |
