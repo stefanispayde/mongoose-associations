@@ -54,7 +54,8 @@ Each leaf "belongs to" the one tree it grew from, and each tree "has many" leave
 
 ![one to many erd example](https://cloud.githubusercontent.com/assets/3254910/18182445/e4bddb6c-7044-11e6-9099-314b773724f3.png)
 
-![tree](https://cloud.githubusercontent.com/assets/6520345/24934478/9b1a2746-1ed0-11e7-9a7e-61edaa3ed59b.png)
+<img src="https://cloud.githubusercontent.com/assets/6520345/24934478/9b1a2746-1ed0-11e7-9a7e-61edaa3ed59b.png" width="60%">
+
 
 ### Many-to-Many
 
