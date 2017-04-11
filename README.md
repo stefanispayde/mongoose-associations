@@ -223,13 +223,13 @@ cheesy quiche saved successfully
 What are we looking at?
 
 <details><summary>click for line-by-line explanation</summary>
-1. Line 1: `__v` represents the number of times the document has been accessed.
+  1. Line 1: `__v` represents the number of times the document has been accessed.
 
-1. Line 2: The `name` property of the `Food` document we have created.
+  1. Line 2: The `name` property of the `Food` document we have created.
 
-1. Line 4: The unique `_id` created by Mongo for our `Food` document.
+  1. Line 4: The unique `_id` created by Mongo for our `Food` document.
 
-1. Line 5: The `ingredients` array, with a single `ObjectId` that is associated with our `Ingredient` document.
+  1. Line 5: The `ingredients` array, with a single `ObjectId` that is associated with our `Ingredient` document.
 
 </details>
 
@@ -259,15 +259,15 @@ db.Food.findOne({ name: 'Quiche' })
 
 <details><summary>Click to go over this method call line by line:</summary>
 
-1. Line 1: We call a method to find only **one** `Food` document that matches the name: `Quiche`.
+  1. Line 1: We call a method to find only **one** `Food` document that matches the name: `Quiche`.
 
-1. Line 2: We ask the ingredients array within that `Food` document to fetch the actual `Ingredient` document instead of just  its `ObjectId`.
+  1. Line 2: We ask the ingredients array within that `Food` document to fetch the actual `Ingredient` document instead of just  its `ObjectId`.
 
-1. Line 3: When we use `find` without a callback, then `populate`, like here, we can put a callback inside an `.exec()` method call. Technically we have made a query with `find`, but only executed it when we call `.exec()`.
+  1. Line 3: When we use `find` without a callback, then `populate`, like here, we can put a callback inside an `.exec()` method call. Technically we have made a query with `find`, but only executed it when we call `.exec()`.
 
-1. Lines 4-15: If we have any errors, we will log them.  Otherwise, we can display the entire `Food` document **including** the populated `ingredients` array.
+  1. Lines 4-15: If we have any errors, we will log them.  Otherwise, we can display the entire `Food` document **including** the populated `ingredients` array.
 
-1. Line 9 demonstrates that we are able to access both data from the original `Food` document we found **and** the referenced `Ingredient` document we summoned.
+  1. Line 9 demonstrates that we are able to access both data from the original `Food` document we found **and** the referenced `Ingredient` document we summoned.
 
 </details>
 
@@ -321,6 +321,7 @@ Tasks:
 When you need full information about a food, remember to pull ingredient data in with `populate`. Here's an example:
 
 **index of all foods**
+
 ```js
 // send all information for all foods
 app.get('/api/foods/', function (req, res) {
