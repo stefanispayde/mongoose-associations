@@ -223,8 +223,9 @@ cheesy quiche saved successfully
 What are we looking at?
 
 <details><summary>click for line-by-line explanation</summary>
-  1. Line 1: `__v` represents the number of times the document has been accessed.
 
+  1. Line 1: `__v` represents the number of times the document has been accessed.
+  
   1. Line 2: The `name` property of the `Food` document we have created.
 
   1. Line 4: The unique `_id` created by Mongo for our `Food` document.
