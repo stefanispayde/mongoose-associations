@@ -45,9 +45,7 @@ Each person has one brain, and each (living human) brain belongs to one person.
 
 One-to-one relationships can sometimes just be modeled with simple attributes. A person and a brain are both complex enough that we might want to have their data in different models, with lots of different attributes on each.
 
-
-
-
+![human brain](https://cloud.githubusercontent.com/assets/6520345/24934409/54537e34-1ed0-11e7-82dd-957edaf637db.png)
 
 
 ### One-to-Many
@@ -56,6 +54,7 @@ Each leaf "belongs to" the one tree it grew from, and each tree "has many" leave
 
 ![one to many erd example](https://cloud.githubusercontent.com/assets/3254910/18182445/e4bddb6c-7044-11e6-9099-314b773724f3.png)
 
+![tree](https://cloud.githubusercontent.com/assets/6520345/24934478/9b1a2746-1ed0-11e7-9a7e-61edaa3ed59b.png)
 
 ### Many-to-Many
 
@@ -64,6 +63,7 @@ Each student "has many" classes they attend, and each class "has many" students.
 
 ![many to many erd example](https://cloud.githubusercontent.com/assets/3254910/18140903/4c56c3ee-6f6c-11e6-9b6d-4c6ffae81323.png)
 
+![students](https://cloud.githubusercontent.com/assets/6520345/24934536/ee0352c0-1ed0-11e7-82f3-bbb0b02861e4.png)
 
 #### Entity Relationship Diagrams
 
@@ -84,7 +84,6 @@ Come up with an example of related data.  Draw the ERD for your relationship, in
 
 **Embedded Data** is directly nested *inside* of other data. Each record has a copy of the data.
 
-
 It is often *efficient* to embed data because you don't have to make a separate request or a separate database query -- the first request or query gets you all the information you need.  
 
 
@@ -92,7 +91,6 @@ It is often *efficient* to embed data because you don't have to make a separate 
 
 
 **Referenced Data** is stored as an *id* inside other data. The id can be used to look up the information. All records that reference the same data look up the same copy.
-
 
 It is usually easier to keep referenced records *consistent* because the data is only stored in one place and only needs to be updated in one place.  
 
@@ -225,7 +223,7 @@ What are we looking at?
 <details><summary>click for line-by-line explanation</summary>
 
   1. Line 1: `__v` represents the number of times the document has been accessed.
-  
+
   1. Line 2: The `name` property of the `Food` document we have created.
 
   1. Line 4: The unique `_id` created by Mongo for our `Food` document.
