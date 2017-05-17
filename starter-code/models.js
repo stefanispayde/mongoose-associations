@@ -5,6 +5,56 @@ mongoose.connect("mongodb://localhost/mongoRelationships");
 // shorthand so we don't have to type as much
 var Schema = mongoose.Schema;
 
+var ingredientSchema = new Schema({
+  title: {
+    type: String,
+    name: "sour cream"
+  },
+  foodGroup: {
+    type: String,
+    group: "dairy"
+  }
+});
+
+var ingredientSchema = new Schema({
+  title: {
+    type: String,
+    name: "tomatoe"
+  },
+  food group: {
+    type: String,
+    group: "vegetable"
+  }
+});
+
+var ingredientSchema = new Schema({
+  title: {
+    type: String,
+    name: "avocado"
+  },
+  foodGroup: {
+    type: String,
+    group: "vegetable"
+  }
+});
+
+
+/* make a new Ingredient document */
+var sourCream = new db.Ingredient ({
+ title: 'sour cream',
+ foodGroup: 'dairy'
+});
+
+var tomatoe = new db.Ingredient ({
+ title: 'tomatoe',
+ foodGroup: 'vegetable'
+});
+
+var avocado = new db.Ingredient ({
+ title: 'avocado',
+ foodGroup: 'vegetable'
+});
+
 // Referenced Data
 var foodSchema = new Schema({
   name: {
@@ -22,13 +72,13 @@ var ingredientSchema = new Schema({
     type: String,
     default: ""
   },
-  origin: {
+  food group: {
     type: String,
-    default: ""
+    name: ""
   }
 })
 
-
+//compiling models from above schema
 var Food = mongoose.model("Food", foodSchema);
 var Ingredient = mongoose.model("Ingredient", ingredientSchema);
 
