@@ -55,6 +55,22 @@ var avocado = new db.Ingredient ({
  foodGroup: 'vegetable'
 });
 
+/* make a new Food document */
+var enchiladaVerde = new db.Food ({
+  name: 'Enchilada',
+  ingredients: []
+});
+
+var tacoSalad = new db.Food ({
+  name: 'Taco salad',
+  ingredients: []
+});
+
+var quesdilla = new db.Food ({
+  name: 'Quesadilla',
+  ingredients: []
+});
+
 // Referenced Data
 var foodSchema = new Schema({
   name: {
@@ -78,9 +94,26 @@ var ingredientSchema = new Schema({
   }
 })
 
+
 //compiling models from above schema
 var Food = mongoose.model("Food", foodSchema);
 var Ingredient = mongoose.model("Ingredient", ingredientSchema);
+
+//list all ingredient data for a food with .populate
+db.Food.findOne({name: 'EnchiladaVerdes' })
+  .populate('ingredients')
+  .exec(function(err, food){
+    if(err){
+      console.log(err);
+    }
+    if(food.ingredients.length > 0) {
+      console.log('/nI love ' + food.name + 'for the' + food.ingredients[0].title);
+    }
+    else {
+      console.log(food.name + 'has no ingredients.');
+    }
+    console.log('What was the food?', food);
+});
 
 // Embedded Data
 var tweetSchema = new Schema({
